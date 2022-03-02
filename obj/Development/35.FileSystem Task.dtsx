@@ -1,0 +1,284 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/16/2022 6:13:09 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="KAVICHANDRAN"
+  DTS:CreatorName="KAVICHANDRAN\kavichandran"
+  DTS:DTSID="{C348F760-CBFC-4C8A-8409-A7AC21BA8C17}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package2"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{B60F284B-081B-4841-84C5-AB8A936B284C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Archive]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{0027FAA2-5ACB-41A6-8A80-0E1CA5429157}"
+      DTS:ObjectName="Archive">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="2"
+          DTS:ConnectionString="E:\Onlineclasss\R_GROUP\dest files\Archive" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ASI.csv]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{98BF9B1F-351A-4EDD-BA38-22C2FF8B7F39}"
+      DTS:ObjectName="ASI.csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="E:\Onlineclasss\R_GROUP\dest files\Archive\ASI.csv" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Asia.csv]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{C2FC7C0D-57D6-48EA-8797-C7B3D5A064CF}"
+      DTS:ObjectName="Asia.csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="E:\Onlineclasss\R_GROUP\dest files\Archive\Asia.csv" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[One_table_to_multi_csv_1]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{26A86659-BA16-41D9-A8C8-A2294C461740}"
+      DTS:ObjectName="One_table_to_multi_csv_1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="2"
+          DTS:ConnectionString="E:\Onlineclasss\R_GROUP\dest files\One_table_to_multi_csv_1" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[sales_csv.csv]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{713C54D4-1910-4669-9ACE-8BD859CE2085}"
+      DTS:ObjectName="sales_csv.csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="E:\Onlineclasss\R_GROUP\dest files\sales_csv.csv" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[sales_txt.txt]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{F21BB2F3-8DBB-43A0-A2B8-383D1C7CCF86}"
+      DTS:ObjectName="sales_txt.txt">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="E:\Onlineclasss\R_GROUP\dest files\sales_txt.txt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Copy file"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:DTSID="{2ad6cb82-32c6-4879-9e9f-8967ad44320f}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Copy file"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOverwriteDestFile="True"
+          TaskSourcePath="{713C54D4-1910-4669-9ACE-8BD859CE2085}"
+          TaskDestinationPath="{0027FAA2-5ACB-41A6-8A80-0E1CA5429157}" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Copying Directory"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:DTSID="{B7BA0343-60AD-4722-AFCB-792041E421FA}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Copying Directory"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="CopyDirectory"
+          TaskSourcePath="{26A86659-BA16-41D9-A8C8-A2294C461740}"
+          TaskDestinationPath="{0027FAA2-5ACB-41A6-8A80-0E1CA5429157}" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Delete Directory"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:DTSID="{2410db22-23a8-47ab-a395-74606bdb85e4}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete Directory"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="DeleteDirectory"
+          TaskOverwriteDestFile="True"
+          TaskSourcePath="{26A86659-BA16-41D9-A8C8-A2294C461740}"
+          TaskDestinationPath="{0027FAA2-5ACB-41A6-8A80-0E1CA5429157}" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Delete Directory Content"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:DTSID="{645f990a-1496-47c4-874c-029ac61e47e5}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete Directory Content"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="4">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="DeleteDirectoryContent"
+          TaskOverwriteDestFile="True"
+          TaskSourcePath="{26A86659-BA16-41D9-A8C8-A2294C461740}"
+          TaskDestinationPath="{0027FAA2-5ACB-41A6-8A80-0E1CA5429157}" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Delete file"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:DTSID="{ce6e0f1d-70fc-4201-a6dc-4d1d1fb1e924}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete file"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="5">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="DeleteFile"
+          TaskOverwriteDestFile="True"
+          TaskSourcePath="{713C54D4-1910-4669-9ACE-8BD859CE2085}"
+          TaskDestinationPath="{0027FAA2-5ACB-41A6-8A80-0E1CA5429157}" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Move Directory"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:DTSID="{31b164f5-5281-4516-8065-edc2f3891919}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Move Directory"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="6">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="MoveDirectory"
+          TaskOverwriteDestFile="True"
+          TaskSourcePath="{26A86659-BA16-41D9-A8C8-A2294C461740}"
+          TaskDestinationPath="{0027FAA2-5ACB-41A6-8A80-0E1CA5429157}" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Move File"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:DTSID="{f5a270c6-9e50-48cf-80b2-d2ab7f67b39a}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Move File"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="7">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="MoveFile"
+          TaskOverwriteDestFile="True"
+          TaskSourcePath="{F21BB2F3-8DBB-43A0-A2B8-383D1C7CCF86}"
+          TaskDestinationPath="{0027FAA2-5ACB-41A6-8A80-0E1CA5429157}" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\rename File"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:DTSID="{a7857c75-9e55-43d4-ad4c-2d9e601f2996}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="rename File"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="RenameFile"
+          TaskOverwriteDestFile="True"
+          TaskSourcePath="{C2FC7C0D-57D6-48EA-8797-C7B3D5A064CF}"
+          TaskDestinationPath="{98BF9B1F-351A-4EDD-BA38-22C2FF8B7F39}" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Copying Directory"
+          TopLeft="32,44" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\Copy file"
+          TopLeft="56,113" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Delete Directory"
+          TopLeft="36,188" />
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Delete Directory Content"
+          TopLeft="13,256" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\Delete file"
+          TopLeft="44,324" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Move Directory"
+          TopLeft="291,35" />
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Move File"
+          TopLeft="295,102" />
+        <NodeLayout
+          Size="134,42"
+          Id="Package\rename File"
+          TopLeft="345,190" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
